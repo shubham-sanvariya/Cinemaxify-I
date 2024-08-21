@@ -3,6 +3,7 @@ package com.example.Cinemaxify;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.Scanner;
+
 // 1. Beginner Code Template is already provided to you.
 // 2. Just follow the below task to complete the execution of main application.
 @SpringBootApplication
@@ -19,26 +20,46 @@ public class CinemaxifyApplication {
 		int userChoice = scanner.nextInt();
 		scanner.nextLine();
 		switch (userChoice) {
-		  case 1 -> {
-			  // a. Set userType according to the userChoice.
-		  }
-		  case 2 -> {
-			  // b. Set userType according to the userChoice.
-		  }
-		  case 3 -> {
-			  // c. Print "Exiting..." and return
-				    }
-		  default -> {
-			  // d. Print "Invalid choice." and return.
-
-				     }
+			case 1 -> {
+				// a. Set userType according to the userChoice.
+				userType = "self";
+				// Self self = (Self) context.getBean(userType);
+				break;
+			}
+			case 2 -> {
+				// b. Set userType according to the userChoice.
+				userType = "spouse";
+				// Spouse spouse = (Spouse) context.getBean(userType);
+				break;
+			}
+			case 3 -> {
+				// c. Print "Exiting..." and return
+				System.out.println("Exiting...");
+				return;
+			}
+			default -> {
+				// d. Print "Invalid choice." and return.
+				System.out.println("Invalid choice.");
+				return;
+			}
 		}
 		// e. Pick the user bean using context.getBean().
-			User user = ;
+		User user = (User) context.getBean(userType);
+		
 		// f. Take input for User details i.e. name , age, address etc.
+		System.out.println("Please enter your name");
+		String name = scanner.nextLine();
+		System.out.println("Please enter your age");
+		int age = scanner.nextInt();
+		System.out.println("Please enter your contact");
+		long contact = scanner.nextLong();
+		System.out.println("Please enter your address");
+		scanner.nextLine();
+		String address = scanner.nextLine();
 
 		// g. Set the above fetched details into the user by using appropriate method.
-
+		user.setUserDetails(name, age, contact, address);
 		// h. finally print the details by using appropriate method.
-			}
+		user.getUserDetails();
 	}
+}
