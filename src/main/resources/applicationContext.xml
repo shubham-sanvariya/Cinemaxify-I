@@ -6,5 +6,6 @@
 
 <!--    Define the bean id with camelCase Format -->
 <!--    Example My class name is Self then camelCase name would be self -->
-
+        <bean id="self" class="com.example.Cinemaxify.Self"></bean>
+        <bean id="spouse" class="com.example.Cinemaxify.Spouse"></bean>
 </beans>
